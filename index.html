@@ -1,95 +1,154 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Peter B. Sullivan – Portfolio</title>
-    <style>
-      body {
-        background-color: rgb(245, 228, 228);
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 40px;
-      }
-      h1 {
-        color: #222;
-        text-align: center;
-      }
-      nav {
-        text-align: center;
-        margin: 20px 0;
-      }
-      nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #444;
-        font-weight: bold;
-      }
-      nav a:hover {
-        color: #000;
-      }
-      h2 {
-        color: #333;
-        border-bottom: 2px solid #555;
-        padding-bottom: 5px;
-        margin-top: 40px;
-      }
-      ul {
-        margin-top: 10px;
-      }
-      p {
-        max-width: 800px;
-        margin: auto;
-        text-align: center;
-      }
-    </style>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peter B. Sullivan – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  <body>
+    /* Navigation Bar */
+    header {
+      background-color: #2c3e50;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: #2c3e50;
+      border-bottom: 2px solid #1abc9c;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.05em;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    /* Card Style for Sections */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
     <h1>Peter B. Sullivan</h1>
-    <p style="text-align:center;">
-      <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
-      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
-      774-284-3589
-    </p>
-
     <nav>
+      <a href="index.html">Home</a>
       <a href="education.html">Education</a>
       <a href="work_experience.html">Work Experience</a>
       <a href="projects.html">Projects</a>
     </nav>
+  </header>
 
-    <h2>About Me</h2>
+  <!-- Main Content -->
+  <main>
+    <section class="card">
+      <h2>About Me</h2>
+      <p>
+        Adaptive IT Business Analyst with 2+ years of agile experience in SQL-driven systems analysis and modern BI tools. 
+        Currently pursuing an M.S. in Business Analytics with a focus on data analysis, machine learning, and automation. 
+        Passionate about streamlining processes, delivering actionable insights, and leveraging analytics to support 
+        operations and decision-making. Experienced in blending technical expertise with business needs to create 
+        solutions that drive efficiency and impact.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Technical Skills</h2>
+      <h3>Programming & Data</h3>
+      <ul>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Basic Shell</li>
+      </ul>
+
+      <h3>Visualization & Analytics</h3>
+      <ul>
+        <li>Power BI</li>
+        <li>Looker Studio</li>
+        <li>Machine Learning</li>
+        <li>Simulation Modeling</li>
+        <li>Business Analytics & Statistics</li>
+      </ul>
+
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>Microsoft Suite (Excel, Access, Visio, SharePoint)</li>
+        <li>Jira, Confluence</li>
+        <li>Smartsheet</li>
+        <li>Google Sheets</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
     <p>
-      Adaptive IT Business Analyst with 2+ years of agile experience in SQL-driven systems analysis and modern BI tools. 
-      Currently pursuing an M.S. in Business Analytics with a focus on data analysis, machine learning, and automation. 
-      Passionate about streamlining processes, delivering actionable insights, and leveraging analytics to support 
-      operations and decision-making. Experienced in blending technical expertise with business needs to create solutions 
-      that drive efficiency and impact.
+      Contact: <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
+      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
+      774-284-3589
     </p>
-
-    <h2>Technical Skills</h2>
-    <h3>Programming & Data</h3>
-    <ul>
-      <li>Python</li>
-      <li>SQL</li>
-      <li>Basic Shell</li>
-    </ul>
-
-    <h3>Visualization & Analytics</h3>
-    <ul>
-      <li>Power BI</li>
-      <li>Looker Studio</li>
-      <li>Machine Learning</li>
-      <li>Simulation Modeling</li>
-      <li>Business Analytics & Statistics</li>
-    </ul>
-
-    <h3>Tools & Platforms</h3>
-    <ul>
-      <li>Microsoft Suite (Excel, Access, Visio, SharePoint)</li>
-      <li>Jira, Confluence</li>
-      <li>Smartsheet</li>
-      <li>Google Sheets</li>
-    </ul>
-  </body>
+  </footer>
+</body>
 </html>
