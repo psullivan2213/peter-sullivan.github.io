@@ -1,271 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Sullivan | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Peter B. Sullivan – Portfolio</title>
     <style>
-        /* Custom CSS for animations and effects */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        .project-card:hover .project-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-overlay {
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+      body {
+        background-color: rgb(245, 228, 228);
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+      }
+      h1 {
+        color: #222;
+        text-align: center;
+      }
+      nav {
+        text-align: center;
+        margin: 20px 0;
+      }
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #444;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #000;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
+        margin-top: 40px;
+      }
+      ul {
+        margin-top: 10px;
+      }
+      p {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
     </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Peter Sullivan</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            <!-- Mobile menu -->
-            <div class="md:hidden hidden py-4" id="mobile-menu">
-                <div class="flex flex-col space-y-4">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-            </div>
-        </div>
+  </head>
+
+  <body>
+    <h1>Peter B. Sullivan</h1>
+    <p style="text-align:center;">
+      <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
+      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
+      774-284-3589
+    </p>
+
+    <nav>
+      <a href="education.html">Education</a>
+      <a href="work_experience.html">Work Experience</a>
+      <a href="projects.html">Projects</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 animate-fade-in">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="gradient-text">Peter Sullivan</span></h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Business Analytics</h2>
-                    <p class="text-lg mb-8 text-gray-600 max-w-lg">I leverage data and business information to deliver insights about the world around us.</p>
-                    <div class="flex space-x-4">
-                        <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition duration-300">View My Work</a>
-                        <a href="#contact" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg transition duration-300">Contact Me</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 mt-12 md:mt-0 animate-fade-in" style="animation-delay: 0.2s;">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-blue-400 to-purple-500 rounded-full shadow-xl"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h2>About Me</h2>
+    <p>
+      Adaptive IT Business Analyst with 2+ years of agile experience in SQL-driven systems analysis and modern BI tools. 
+      Currently pursuing an M.S. in Business Analytics with a focus on data analysis, machine learning, and automation. 
+      Passionate about streamlining processes, delivering actionable insights, and leveraging analytics to support 
+      operations and decision-making. Experienced in blending technical expertise with business needs to create solutions 
+      that drive efficiency and impact.
+    </p>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About <span class="gradient-text">Me</span></h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                    <div class="w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow-lg overflow-hidden">
-                        <!-- Placeholder for actual image -->
-                        <div class="w-full h-full bg-gray-300"></div>
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        I'm Peter Sullivan, a business analyst with an passion for big data. My journey began with a love for business, technology, and data. This led me to pursue a career where I can merge these.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        I combine business acumen with technical expertise to deliver exceptional results to stakeholders.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                            <span>Detail-Oriented</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                            <span>Communicative</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                            <span>Creative</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                            <span>Team Player</span>
-                        </div>
-                    </div>
-                    <a href="#" class="inline-flex items-center text-blue-500 font-medium">
-                        Download Resume <i class="fas fa-download ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h2>Technical Skills</h2>
+    <h3>Programming & Data</h3>
+    <ul>
+      <li>Python</li>
+      <li>SQL</li>
+      <li>Basic Shell</li>
+    </ul>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My <span class="gradient-text">Projects</span></h2>
-            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Here's a selection of my recent work. Each project represents a unique challenge and solution.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative">
-                        <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500"></div>
-                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6">
-                            <div class="text-center text-white">
-                                <h3 class="text-xl font-bold mb-2">3-in-1 Credit Card Transactions</h3>
-                                <p class="mb-4">A personal project using python with pandas to compile credit card transactions from 3 different datasets into one master Excel file for analysis.</p>
-                                <a href="#" class="inline-block bg-white text-blue-500 px-4 py-2 rounded-lg">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">3-in-1 Credit Card Transactions</h3>
-                        <p class="text-gray-600 mb-4">Python, Pandas, Google Colab</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">2025</span>
-                            <a href="#" class="text-blue-500 hover:text-blue-600">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative">
-                        <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500"></div>
-                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6">
-                            <div class="text-center text-white">
-                                <h3 class="text-xl font-bold mb-2">Project 2</h3>
-                                <p class="mb-4">pending</p>
-                                <a href="#" class="inline-block bg-white text-blue-500 px-4 py-2 rounded-lg">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Project 2</h3>
-                        <p class="text-gray-600 mb-4">pending</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">Year</span>
-                            <a href="#" class="text-blue-500 hover:text-blue-600">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative">
-                        <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500"></div>
-                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6">
-                            <div class="text-center text-white">
-                                <h3 class="text-xl font-bold mb-2">Project 3</h3>
-                                <p class="mb-4">pending</p>
-                                <a href="#" class="inline-block bg-white text-blue-500 px-4 py-2 rounded-lg">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Project 3</h3>
-                        <p class="text-gray-600 mb-4"></p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">Year</span>
-                            <a href="#" class="text-blue-500 hover:text-blue-600">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg transition duration-300">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    <h3>Visualization & Analytics</h3>
+    <ul>
+      <li>Power BI</li>
+      <li>Looker Studio</li>
+      <li>Machine Learning</li>
+      <li>Simulation Modeling</li>
+      <li>Business Analytics & Statistics</li>
+    </ul>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My <span class="gradient-text">Skills</span></h2>
-            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">I've worked with a variety of technologies.</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Skill 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                        <i class="fab fa-html5 text-blue-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Python</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 95%"></div>
-                    </div>
-                    <p class="text-sm text-gray-500">Advanced</p>
-                </div>
-                
-                <!-- Skill 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                        <i class="fab fa-css3-alt text-purple-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">SQL</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-                        <div class="bg-purple-500 h-2.5 rounded-full" style="width: 90%"></div>
-                    </div>
+    <h3>Tools & Platforms</h3>
+    <ul>
+      <li>Microsoft Suite (Excel, Access, Visio, SharePoint)</li>
+      <li>Jira, Confluence</li>
+      <li>Smartsheet</li>
+      <li>Google Sheets</li>
+    </ul>
+  </body>
 </html>
