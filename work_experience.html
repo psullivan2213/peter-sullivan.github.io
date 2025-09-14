@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta charset="utf-8">
     <title>Work Experience</title>
-     <style>
-      body{
-      background-color:"blue";
-        }    
-     #CB_job_info {
-       color: blue;
-       }
-       
+    <style>
+      body {
+        background-color: rgb(245, 228, 228);
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
+      }
+      details {
+        margin: 15px 0;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      summary {
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: #444;
+      }
+      summary:hover {
+        color: #000;
+      }
+      ul {
+        margin-top: 5px;
+      }
     </style>
   </head>
   
   <body>
-    <h2>Work Experience<br></h2>
-    <h3>Centreville Bank</h3>
-    <p id="CB_job_info"><strong>Information Technology Intern </strong>West Warwick, RI   Summer 2022</p>
+    <h2>Work Experience</h2>
+
+    <details open>
+      <summary>IT Business Analyst II – Arbella Insurance (Jul 2023 – Present)</summary>
+      <p><em>Quincy, MA</em></p>
+      <ul>
+        <li>Promoted to IT Business Analyst II for leading monthly agile SDLC cycles from requirements gathering through deployment.</li>
+        <li>Implemented Smartsheet IT impact assessment tool, reducing manual data entry time by 50%.</li>
+        <li>Designed SQL queries on the commercial policy database to streamline systems analysis and product vetting.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Freelance Prompt Engineer (Jul – Aug 2024)</summary>
+      <p><em>Online</em></p>
+      <ul>
+        <li>Developed an AI-driven nutrition planning tool, generating 1,000+ pages with customized caloric recipes and images.</li>
+        <li>Proofread and refined outputs to deliver accurate, high-value results for client meal-planning goals.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>IT Service Desk Intern – Centreville Bank (Jun – Aug 2022)</summary>
+      <p><em>West Warwick, RI</em></p>
+      <ul>
+        <li>Supported ~200 employees on the bank’s intranet with admin access across 18 branches.</li>
+        <li>Coordinated nearly 100 employee meetings to standardize inconsistent Microsoft account data in Active Directory.</li>
+        <li>Instituted a standard operating procedure for the computer imaging process, solving a long-standing pain point.</li>
+      </ul>
+    </details>
+
   </body>
 </html>
