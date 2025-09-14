@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta charset="utf-8">
     <title>My Education</title>
-     <style>
-      body{
-      background-color:rgb(245, 228, 228);
-        }    
-     
+    <style>
+      body {
+        background-color: rgb(245, 228, 228);
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
+      }
+      details {
+        margin: 15px 0;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      summary {
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: #444;
+      }
+      summary:hover {
+        color: #000;
+      }
+      ul {
+        margin-top: 5px;
+      }
     </style>
   </head>
   
   <body>
     <h2>My Education</h2>
     
-    <h3>Bachelors of Science in Business Administration<br>
-      Information Systems<br>
-      Bryant University Class of '23<br>
-      Honors Program Participant</h3>
-    
-    <h2>Relevant Coursework</h2>
-    <h3>Programming for Data Science, Fall 2022<br></h3>
-    <h4>• Manipulated data using Python and Pandas software library<br>
-      • Sifted through dirty data to create solutions on how to standardize entries</h4>
+    <details open>
+      <summary>M.S. in Business Analytics (Anticipated May 2026)</summary>
+      <p><strong>University of Massachusetts Lowell</strong>, Lowell, MA<br>
+      GPA: 3.5</p>
+      <p><em>Relevant Coursework:</em></p>
+      <ul>
+        <li>Analytical Decision-Making Tools</li>
+        <li>Advanced Data Mining</li>
+        <li>Statistics for Predictive Analytics</li>
+      </ul>
+    </details>
 
-    
-
+    <details>
+      <summary>B.S. in Business Administration (May 2023)</summary>
+      <p><strong>Bryant University</strong>, Smithfield, RI<br>
+      Concentration in Information Systems, Minor in Psychology<br>
+      GPA: 3.6 – Honors Program Graduate</p>
+      <p><em>Relevant Coursework:</em></p>
+      <ul>
+        <li>Programming for Data Science – Manipulated data using Python & Pandas; standardized messy datasets</li>
+        <li>Data Visualization</li>
+        <li>Database Management Systems Principles</li>
+      </ul>
+    </details>
   </body>
 </html>
