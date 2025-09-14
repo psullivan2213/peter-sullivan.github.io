@@ -6,27 +6,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* General Styling */
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-blue: #93c5fd;
+      --dark-bg: #1e293b;
+      --light-bg: #f8fafc;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #f4f6f9, #e8f0f7);
-      color: #333;
+      background: var(--light-bg);
+      color: #334155;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     /* Header */
     header {
-      background: linear-gradient(90deg, #2c3e50, #34495e);
-      padding: 15px 30px;
+      background: var(--dark-bg);
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
       animation: slideDown 0.8s ease;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
 
     header h1 {
@@ -34,21 +63,51 @@
       font-size: 1.6em;
       margin: 0;
       letter-spacing: 1px;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--accent-blue), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: all 0.3s ease;
+    }
+
+    header h1:hover {
+      background: linear-gradient(90deg, #fff, var(--accent-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
     /* Navigation */
     nav a {
-      color: #ecf0f1;
+      color: #e2e8f0;
       text-decoration: none;
-      margin-left: 20px;
+      margin-left: 25px;
       font-weight: 600;
-      transition: color 0.3s, transform 0.3s;
+      transition: all 0.3s ease;
       display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-blue);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: #1abc9c;
+      color: var(--accent-blue);
       transform: translateY(-2px);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* Main Layout */
@@ -61,11 +120,30 @@
 
     h2 {
       margin-top: 50px;
-      color: #2c3e50;
-      border-bottom: 3px solid #1abc9c;
+      color: var(--dark-bg);
       padding-bottom: 5px;
-      text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: expand 0.5s ease forwards;
+    }
+
+    @keyframes expand {
+      to { transform: scaleX(1); }
     }
 
     p {
@@ -79,54 +157,81 @@
     /* Card Style */
     .card {
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-      padding: 25px;
-      margin-top: 25px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-top: 30px;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       animation: popUp 0.6s ease;
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), transparent);
+      z-index: -1;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      border-color: rgba(59, 130, 246, 0.2);
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
-      background: #2c3e50;
-      color: #ecf0f1;
-      margin-top: 60px;
+      padding: 25px;
+      background: #1a237e;
+      color: #e8eaf6;
+      margin-top: 80px;
       font-size: 0.9em;
       animation: fadeIn 1.2s ease;
     }
 
     footer a {
-      color: #1abc9c;
+      color: #64b5f6;
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
 
     footer a:hover {
-      color: #16f2c9;
+      color: #bbdefb;
+      text-decoration: underline;
     }
 
     /* Animations */
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     @keyframes slideDown {
-      from {transform: translateY(-100%);}
-      to {transform: translateY(0);}
+      from {transform: translateY(-100%); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
     }
 
     @keyframes popUp {
-      from {transform: scale(0.95); opacity: 0;}
-      to {transform: scale(1); opacity: 1;}
+      from {transform: scale(0.95) translateY(20px); opacity: 0;}
+      to {transform: scale(1) translateY(0); opacity: 1;}
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
+      100% {transform: translateY(0);}
+    }
+
+    .card:hover h2::after {
+      animation: float 3s ease-in-out infinite;
     }
   </style>
 </head>
@@ -134,7 +239,10 @@
 
   <!-- Header -->
   <header>
-    <h1>Peter B. Sullivan</h1>
+    <div class="header-content">
+      <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
+      <h1>Peter B. Sullivan</h1>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="education.html">Education</a>
@@ -146,7 +254,23 @@
   <!-- Main Content -->
   <main>
     <section class="card">
-      <h2>About Me</h2>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>About Me</h2>
+        <a href="#" class="resume-btn" style="text-decoration: none;">
+          <button style="background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); 
+                        color: white; 
+                        border: none; 
+                        padding: 10px 20px; 
+                        border-radius: 8px; 
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            Download Resume
+            <i data-feather="download" style="margin-left: 8px;"></i>
+          </button>
+        </a>
+      </div>
       <p>
         Adaptive IT Business Analyst with 2+ years of agile experience in SQL-driven systems analysis and modern BI tools. 
         Currently pursuing an M.S. in Business Analytics with a focus on data analysis, machine learning, and automation. 
@@ -183,6 +307,19 @@
       </ul>
     </section>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      feather.replace();
+      
+      // Add click handler for resume button
+      document.querySelector('.resume-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Replace with actual resume URL when available
+        alert('Resume download will be available soon!');
+      });
+    });
+  </script>
 
   <!-- Footer -->
   <footer>
