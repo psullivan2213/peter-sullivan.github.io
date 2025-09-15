@@ -256,7 +256,8 @@
     <section class="card">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2>About Me</h2>
-        <a href="#" class="resume-btn" style="text-decoration: none;">
+        <a href="mailto:psullivan2213@outlook.com?subject=Request%20for%20Resume&body=Hi%20Peter%2C%20I%27d%20like%20to%20request%20a%20copy%20of%20your%20resume%20tailored%20to%20our%20role." 
+           class="resume-btn" style="text-decoration: none;">
           <button style="background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); 
                         color: white; 
                         border: none; 
@@ -266,8 +267,7 @@
                         cursor: pointer;
                         transition: all 0.3s ease;
                         box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            Download Resume
-            <i data-feather="download" style="margin-left: 8px;"></i>
+            📩 Request Resume
           </button>
         </a>
       </div>
@@ -307,19 +307,6 @@
       </ul>
     </section>
   </main>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      feather.replace();
-      
-      // Add click handler for resume button
-      document.querySelector('.resume-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        // Replace with actual resume URL when available
-        alert('Resume download will be available soon!');
-      });
-    });
-  </script>
 
   <!-- Footer -->
   <footer>
