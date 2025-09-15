@@ -1,73 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Experience</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
-      body {
-        background-color: rgb(245, 228, 228);
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 40px;
-      }
-      h2 {
-        color: #333;
-        border-bottom: 2px solid #555;
-        padding-bottom: 5px;
-      }
-      details {
-        margin: 15px 0;
-        background: #fff;
-        padding: 10px 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-      summary {
-        font-weight: bold;
-        cursor: pointer;
-        font-size: 1.1em;
-        color: #444;
-      }
-      summary:hover {
-        color: #000;
-      }
-      ul {
-        margin-top: 5px;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .blue-accent {
+            color: #3b82f6;
+        }
+        .blue-bg {
+            background-color: #3b82f6;
+        }
+        .blue-border {
+            border-color: #3b82f6;
+        }
     </style>
-  </head>
-  
-  <body>
-    <h2>Work Experience</h2>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <div class="flex justify-between items-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800">Work <span class="blue-accent">Experience</span></h1>
+            <nav class="flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500 transition-colors">Home</a>
+                <a href="education.html" class="text-gray-600 hover:text-blue-500 transition-colors">Education</a>
+                <a href="projects.html" class="text-gray-600 hover:text-blue-500 transition-colors">Projects</a>
+                <a href="work_experience.html" class="blue-accent font-medium">Experience</a>
+            </nav>
+        </div>
 
-    <details open>
-      <summary>IT Business Analyst II – Arbella Insurance (Jul 2023 – Present)</summary>
-      <p><em>Quincy, MA</em></p>
-      <ul>
-        <li>Promoted to IT Business Analyst II for leading monthly agile SDLC cycles from requirements gathering through deployment.</li>
-        <li>Implemented Smartsheet IT impact assessment tool, reducing manual data entry time by 50%.</li>
-        <li>Designed SQL queries on the commercial policy database to streamline systems analysis and product vetting.</li>
-      </ul>
-    </details>
+        <div class="space-y-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
+                <details open class="group">
+                    <summary class="list-none cursor-pointer p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
+                                IT Business Analyst II – Arbella Insurance (Jul 2023 – Present)
+                            </h2>
+                            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                        <p class="text-gray-600 mb-2"><em>Quincy, MA</em></p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Promoted to IT Business Analyst II for leading monthly agile SDLC cycles from requirements gathering through deployment.</li>
+                            <li>Implemented Smartsheet IT impact assessment tool, reducing manual data entry time by 50%.</li>
+                            <li>Designed SQL queries on the commercial policy database to streamline systems analysis and product vetting.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
 
-    <details>
-      <summary>Freelance Prompt Engineer (Jul – Aug 2024)</summary>
-      <p><em>Online</em></p>
-      <ul>
-        <li>Developed an AI-driven nutrition planning tool, generating 1,000+ pages with customized caloric recipes and images.</li>
-        <li>Proofread and refined outputs to deliver accurate, high-value results for client meal-planning goals.</li>
-      </ul>
-    </details>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <details class="group">
+                    <summary class="list-none cursor-pointer p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
+                                Freelance Prompt Engineer (Jul – Aug 2024)
+                            </h2>
+                            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                        <p class="text-gray-600 mb-2"><em>Online</em></p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Developed an AI-driven nutrition planning tool, generating 1,000+ pages with customized caloric recipes and images.</li>
+                            <li>Proofread and refined outputs to deliver accurate, high-value results for client meal-planning goals.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
 
-    <details>
-      <summary>IT Service Desk Intern – Centreville Bank (Jun – Aug 2022)</summary>
-      <p><em>West Warwick, RI</em></p>
-      <ul>
-        <li>Supported ~200 employees on the bank’s intranet with admin access across 18 branches.</li>
-        <li>Coordinated nearly 100 employee meetings to standardize inconsistent Microsoft account data in Active Directory.</li>
-        <li>Instituted a standard operating procedure for the computer imaging process, solving a long-standing pain point.</li>
-      </ul>
-    </details>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                <details class="group">
+                    <summary class="list-none cursor-pointer p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
+                                IT Service Desk Intern – Centreville Bank (Jun – Aug 2022)
+                            </h2>
+                            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                        <p class="text-gray-600 mb-2"><em>West Warwick, RI</em></p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                            <li>Supported ~200 employees on the bank's intranet with admin access across 18 branches.</li>
+                            <li>Coordinated nearly 100 employee meetings to standardize inconsistent Microsoft account data in Active Directory.</li>
+                            <li>Instituted a standard operating procedure for the computer imaging process, solving a long-standing pain point.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
 
-  </body>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
 </html>
