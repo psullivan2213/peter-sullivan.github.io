@@ -288,67 +288,77 @@
   <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="hero-img">
   <h1 class="hero-name">Peter B. Sullivan</h1>
 </section>
-  <!-- Word Cloud Section -->
-  <section class="word-cloud">
-    <span class="word large">Business Analyst</span>
-    <span class="word medium">Data Analytics</span>
-    <span class="word small">SQL</span>
-    <span class="word medium">Python</span>
-    <span class="word small">Power BI</span>
-    <span class="word medium">Process Improvement</span>
-    <span class="word small">Looker Studio</span>
-    <span class="word medium">Agile Collaboration</span>
-    <span class="word small">Innovation</span>
-  </section>
+ <!-- Word Cloud Section -->
+<section class="word-cloud">
+  <span class="word large float1">Business Analyst</span>
+  <span class="word medium tilt-left float2">Data Analytics</span>
+  <span class="word small float3">SQL</span>
+  <span class="word large tilt-right float2">Python</span>
+  <span class="word medium float1">Power BI</span>
+  <span class="word small tilt-left float3">Process Improvement</span>
+</section>
 
-  <style>
-    .word-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--light-bg));
-    }
+<style>
+  .word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px 70px; /* looser spacing */
+    padding: 100px 20px; /* more breathing room */
+    background: linear-gradient(135deg, var(--accent-blue), var(--light-bg));
+    min-height: 350px;
+    overflow: hidden;
+  }
 
-    .word {
-      font-weight: 600;
-      color: var(--dark-bg);
-      opacity: 0.85;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      cursor: default;
-    }
+  .word {
+    font-weight: 600;
+    color: var(--dark-bg);
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    cursor: default;
+    display: inline-block;
+  }
 
-    .word.large { font-size: 2rem; }
-    .word.medium { font-size: 1.5rem; }
-    .word.small { font-size: 1.2rem; }
+  .word.large { font-size: 2.5rem; }
+  .word.medium { font-size: 1.8rem; }
+  .word.small { font-size: 1.3rem; }
 
-    .word:hover {
-      transform: scale(1.15);
-      opacity: 1;
-      color: var(--primary-blue);
-    }
+  .word:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    color: var(--primary-blue);
+  }
 
-    /* optional entrance animation */
-    .word {
-      animation: floatIn 1s ease forwards;
-    }
+  /* Add tilt for less alignment */
+  .tilt-left { transform: rotate(-6deg); }
+  .tilt-right { transform: rotate(6deg); }
 
-    .word:nth-child(1) { animation-delay: 0s; }
-    .word:nth-child(2) { animation-delay: 0.1s; }
-    .word:nth-child(3) { animation-delay: 0.2s; }
-    .word:nth-child(4) { animation-delay: 0.3s; }
-    .word:nth-child(5) { animation-delay: 0.4s; }
-    .word:nth-child(6) { animation-delay: 0.5s; }
-    .word:nth-child(7) { animation-delay: 0.6s; }
-    .word:nth-child(8) { animation-delay: 0.7s; }
-    .word:nth-child(9) { animation-delay: 0.8s; }
+  /* Floating animations */
+  @keyframes floatUpDown1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
 
-    @keyframes floatIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-  </style>
+  @keyframes floatUpDown2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  @keyframes floatUpDown3 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .float1 { animation: floatUpDown1 6s ease-in-out infinite; }
+  .float2 { animation: floatUpDown2 8s ease-in-out infinite; }
+  .float3 { animation: floatUpDown3 7s ease-in-out infinite; }
+
+  /* Keep tilt even when floating */
+  .tilt-left.float1, .tilt-left.float2, .tilt-left.float3 {
+    animation-name: floatUpDown1, tiltLeft;
+  }
+</style>
   <!-- Main Content -->
   <main>
     <section class="card">
