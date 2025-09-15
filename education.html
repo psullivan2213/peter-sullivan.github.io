@@ -1,100 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Education</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-        }
-        .blue-accent {
-            color: #3b82f6;
-        }
-        .blue-bg {
-            background-color: #3b82f6;
-        }
-        .blue-border {
-            border-color: #3b82f6;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Education</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-blue: #93c5fd;
+      --dark-bg: #1e293b;
+      --light-bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--light-bg);
+    }
+
+    /* Header (standardized) */
+    header {
+      background: var(--dark-bg);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.4em;
+      margin: 0;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--accent-blue), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Nav links */
+    header nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    header nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-blue);
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
+    header nav a.active {
+      color: var(--accent-blue);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+  </style>
 </head>
-<body class="min-h-screen">
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
-        <div class="flex justify-between items-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800">My <span class="blue-accent">Education</span></h1>
-            <nav class="flex space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-blue-500 transition-colors">Home</a>
-                <a href="education.html" class="blue-accent font-medium">Education</a>
-                <a href="projects.html" class="text-gray-600 hover:text-blue-500 transition-colors">Projects</a>
-                <a href="work_experience.html" class="text-gray-600 hover:text-blue-500 transition-colors">Experience</a>
-            </nav>
-        </div>
-
-        <div class="space-y-8">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
-                <details open class="group">
-                    <summary class="list-none cursor-pointer p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
-                                M.S. in Business Analytics (Anticipated May 2026)
-                            </h2>
-                            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
-                        </div>
-                    </summary>
-                    <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-                        <p class="text-gray-700 mb-2"><strong class="blue-accent">University of Massachusetts Lowell</strong>, Lowell, MA<br>
-                        GPA: 3.5</p>
-                        <p class="text-gray-600 mb-2"><em>Relevant Coursework:</em></p>
-                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
-                            <li>Analytical Decision-Making Tools</li>
-                            <li>Advanced Data Mining</li>
-                            <li>Statistics for Predictive Analytics</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                <details class="group">
-                    <summary class="list-none cursor-pointer p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
-                                B.S. in Business Administration (May 2023)
-                            </h2>
-                            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
-                        </div>
-                    </summary>
-                    <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-                        <p class="text-gray-700 mb-2"><strong class="blue-accent">Bryant University</strong>, Smithfield, RI<br>
-                        Concentration in Information Systems, Minor in Psychology<br>
-                        GPA: 3.6 – Honors Program Graduate</p>
-                        <p class="text-gray-600 mb-2"><em>Relevant Coursework:</em></p>
-                        <ul class="list-disc pl-5 space-y-1 text-gray-600">
-                            <li>Programming for Data Science – Manipulated data using Python & Pandas; standardized messy datasets</li>
-                            <li>Data Visualization</li>
-                            <li>Database Management Systems Principles</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-        </div>
+<body>
+  <!-- Header (standardized from index) -->
+  <header>
+    <div class="header-content">
+      <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
+      <h1>Peter B. Sullivan</h1>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="work_experience.html">Work Experience</a>
+    </nav>
+  </header>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        feather.replace();
-    </script>
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="text-4xl font-bold text-gray-800 mb-12">My <span style="color: var(--secondary-blue);">Education</span></h1>
+
+    <div class="space-y-8">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+        <details open class="group">
+          <summary class="list-none cursor-pointer p-6 focus:outline-none">
+            <div class="flex justify-between items-center">
+              <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
+                M.S. in Business Analytics (Anticipated May 2026)
+              </h2>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+            <p class="text-gray-700 mb-2"><strong style="color: var(--secondary-blue);">University of Massachusetts Lowell</strong>, Lowell, MA<br>
+            GPA: 3.5</p>
+            <p class="text-gray-600 mb-2"><em>Relevant Coursework:</em></p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-600">
+              <li>Analytical Decision-Making Tools</li>
+              <li>Advanced Data Mining</li>
+              <li>Statistics for Predictive Analytics</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+        <details class="group">
+          <summary class="list-none cursor-pointer p-6 focus:outline-none">
+            <div class="flex justify-between items-center">
+              <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
+                B.S. in Business Administration (May 2023)
+              </h2>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+            <p class="text-gray-700 mb-2"><strong style="color: var(--secondary-blue);">Bryant University</strong>, Smithfield, RI<br>
+            Concentration in Information Systems, Minor in Psychology<br>
+            GPA: 3.6 – Honors Program Graduate</p>
+            <p class="text-gray-600 mb-2"><em>Relevant Coursework:</em></p>
+            <ul class="list-disc pl-5 space-y-1 text-gray-600">
+              <li>Programming for Data Science – Manipulated data using Python & Pandas; standardized messy datasets</li>
+              <li>Data Visualization</li>
+              <li>Database Management Systems Principles</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Active link highlight -->
+  <script>
+    const links = document.querySelectorAll('header nav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
