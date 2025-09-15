@@ -28,62 +28,126 @@
   <div class="container mx-auto px-4 py-12 max-w-5xl">
     
     <!-- Header (Navigation Bar) -->
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html">Projects</a>
-        <a href="work_experience.html">Work Experience</a>
-      </nav>
-    </header>
-    <style>
-    /* Navigation */
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 8px;
-      position: relative;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background: var(--accent-blue);
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover {
-      color: var(--accent-blue);
-      transform: translateY(-2px);
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    /* Header container */
-    header {
-      background: var(--dark-bg);
-      padding: 15px 5%;
-      display: flex;
-      justify-content: center; /* centers nav links */
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-      animation: slideDown 0.8s ease;
-    }
-    </style>
+<header>
+  <div class="header-content">
+    <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
+    <h1>Peter B. Sullivan</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="work_experience.html">Work Experience</a>
+  </nav>
+</header>
+<style>
+      /* Navigation */
+      :root{
+    --primary-blue: #2563eb;
+    --secondary-blue: #3b82f6;
+    --accent-blue: #93c5fd;
+    --dark-bg: #1e293b;
+    --light-bg: #f8fafc;
+  }
+  
+  /* Header container */
+  header {
+    background: var(--dark-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    animation: slideDown 0.8s ease;
+  }
+  
+  /* small container holding photo + name */
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* profile image in header */
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-blue);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* header name (small in the header) */
+  header h1 {
+    color: #fff;
+    font-size: 1.6em;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent-blue), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  header h1:hover {
+    background: linear-gradient(90deg, #fff, var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  /* nav links */
+  header nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  /* underline animation */
+  header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--accent-blue);
+    transition: width 0.3s ease;
+  }
+  
+  header nav a:hover {
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+  }
+  
+  header nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* active page styling (applies when JS adds .active) */
+  header nav a.active {
+    color: var(--accent-blue);
+    background: rgba(255,255,255,0.03);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.02);
+  }
+  </style>
     <!-- Filters -->
     <div class="flex flex-wrap gap-3 mb-10">
       <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100 active" onclick="filterProjects('all')">All</button>
