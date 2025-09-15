@@ -19,6 +19,7 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       background-color: var(--light-bg);
+      color: #334155;
     }
 
     /* Header (standardized) */
@@ -109,13 +110,130 @@
       padding: 0 20px;
     }
 
-    /* Card styling */
+    h1.page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1e293b;
+    }
+
+    h1.page-title span {
+      color: var(--secondary-blue);
+    }
+
+    /* Job cards */
     details {
       border-radius: 12px;
       background: #fff;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       margin-bottom: 20px;
       transition: all 0.3s ease;
+      overflow: hidden;
     }
 
     details[open] {
+      box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .job-content {
+      padding: 0 20px 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .job-content p {
+      margin: 8px 0;
+      font-style: italic;
+      color: #475569;
+    }
+
+    .job-content ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+      list-style: disc;
+      color: #334155;
+    }
+
+    .job-content li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
+      <h1>Peter B. Sullivan</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="work_experience.html">Work Experience</a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="page-title">Work <span>Experience</span></h1>
+
+    <details open>
+      <summary><h2>IT Business Analyst II – Arbella Insurance (Jul 2023 – Present)</h2></summary>
+      <div class="job-content">
+        <p>Quincy, MA</p>
+        <ul>
+          <li>Promoted to IT Business Analyst II for leading monthly agile SDLC cycles from requirements gathering through deployment.</li>
+          <li>Implemented Smartsheet IT impact assessment tool, reducing manual data entry time by 50%.</li>
+          <li>Designed SQL queries on the commercial policy database to streamline systems analysis and product vetting.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><h2>Freelance Prompt Engineer (Jul – Aug 2024)</h2></summary>
+      <div class="job-content">
+        <p>Online</p>
+        <ul>
+          <li>Developed an AI-driven nutrition planning tool, generating 1,000+ pages with customized caloric recipes and images.</li>
+          <li>Proofread and refined outputs to deliver accurate, high-value results for client meal-planning goals.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><h2>IT Service Desk Intern – Centreville Bank (Jun – Aug 2022)</h2></summary>
+      <div class="job-content">
+        <p>West Warwick, RI</p>
+        <ul>
+          <li>Supported ~200 employees on the bank's intranet with admin access across 18 branches.</li>
+          <li>Coordinated nearly 100 employee meetings to standardize inconsistent Microsoft account data in Active Directory.</li>
+          <li>Instituted a standard operating procedure for the computer imaging process, solving a long-standing pain point.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- Active nav highlight -->
+  <script>
+    const links = document.querySelectorAll('header nav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
