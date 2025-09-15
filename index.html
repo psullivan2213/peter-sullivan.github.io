@@ -358,6 +358,36 @@
   .tilt-left.float1, .tilt-left.float2, .tilt-left.float3 {
     animation-name: floatUpDown1, tiltLeft;
   }
+  /* Responsive adjustments */
+@media (max-width: 768px) { /* tablets + smaller */
+  .word-cloud {
+    gap: 30px 40px;   /* reduce spacing */
+    padding: 60px 15px;
+    min-height: 250px;
+  }
+
+  .word.large { font-size: 1.8rem; }
+  .word.medium { font-size: 1.4rem; }
+  .word.small { font-size: 1rem; }
+}
+
+@media (max-width: 480px) { /* phones */
+  .word-cloud {
+    flex-direction: column; /* stack vertically */
+    gap: 20px;
+    min-height: auto;
+    padding: 40px 10px;
+  }
+
+  .word {
+    text-align: center;
+    display: block;
+  }
+
+  .word.large { font-size: 1.5rem; }
+  .word.medium { font-size: 1.2rem; }
+  .word.small { font-size: 0.95rem; }
+}
 </style>
   <!-- Main Content -->
   <main>
