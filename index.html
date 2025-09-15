@@ -345,7 +345,52 @@
       </ul>
     </section>
   </main>
+    <!-- Personal Interests Section -->
+    <section class="card">
+      <h2>Beyond Work</h2>
+      <ul class="interests-list">
+        <li><span class="icon">🏃‍♂️</span> Distance Running – I enjoy training, racing, and setting new goals in road races.</li>
+        <li><span class="icon">🎶</span> Discovering & Listening to Music – Always searching for new sounds and artists.</li>
+        <li><span class="icon">🏀</span> Boston Celtics – A passionate fan who rarely misses a game.</li>
+        <li><span class="icon">💰</span> Personal Finance – Interested in financial strategies and long-term planning.</li>
+        <li><span class="icon">🧠</span> Psychology – Curious about human behavior and how that affects our decision-making.</li>
+        <li><span class="icon">💡</span> New Technology – Excited about innovations shaping the future and keeping up with them.</li>
+        <li><span class="icon">🚉</span> Transportation & Infrastructure Planning – Fascinated by how cities grow and adapt.</li>
+      </ul>
+    </section>
 
+    <style>
+      .interests-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.1em;
+      }
+
+      .interests-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .icon {
+        display: inline-block;
+        font-size: 1.3em;
+        transition: transform 0.3s ease;
+      }
+
+      /* Hover bounce animation */
+      .interests-list li:hover .icon {
+        animation: bounce 0.6s;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-6px); }
+        60% { transform: translateY(3px); }
+      }
+    </style>
   <!-- Footer -->
   <footer>
     <p>
