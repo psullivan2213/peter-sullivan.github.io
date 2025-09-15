@@ -26,17 +26,64 @@
 </head>
 <body class="min-h-screen">
   <div class="container mx-auto px-4 py-12 max-w-5xl">
-    <!-- Header -->
-    <div class="flex justify-between items-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-800">My <span class="blue-accent">Projects</span></h1>
-      <nav class="flex space-x-6">
-        <a href="index.html" class="text-gray-600 hover:text-blue-500 transition-colors">Home</a>
-        <a href="education.html" class="text-gray-600 hover:text-blue-500 transition-colors">Education</a>
-        <a href="projects.html" class="blue-accent font-medium">Projects</a>
-        <a href="work_experience.html" class="text-gray-600 hover:text-blue-500 transition-colors">Experience</a>
+    
+    <!-- Header (Navigation Bar) -->
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="work_experience.html">Work Experience</a>
       </nav>
-    </div>
-
+    </header>
+    <style>
+    /* Navigation */
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-blue);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Header container */
+    header {
+      background: var(--dark-bg);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: center; /* centers nav links */
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      animation: slideDown 0.8s ease;
+    }
+    </style>
     <!-- Filters -->
     <div class="flex flex-wrap gap-3 mb-10">
       <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100 active" onclick="filterProjects('all')">All</button>
