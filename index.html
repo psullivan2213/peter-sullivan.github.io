@@ -141,6 +141,38 @@
       transform-origin: left;
       animation: expand 0.5s ease forwards;
     }
+  
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--light-bg));
+    }
+    
+    .hero-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-blue);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    
+    .hero-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .hero-name {
+      margin-top: 20px;
+      font-size: 2.8em;
+      font-weight: 700;
+      color: var(--dark-bg);
+      background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
     @keyframes expand {
       to { transform: scaleX(1); }
@@ -251,6 +283,12 @@
     </nav>
   </header>
 
+<!-- Hero Section -->
+<section class="hero">
+  <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="hero-img">
+  <h1 class="hero-name">Peter B. Sullivan</h1>
+</section>
+  
   <!-- Main Content -->
   <main>
     <section class="card">
