@@ -5,173 +5,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-blue: #93c5fd;
+      --dark-bg: #1e293b;
+      --light-bg: #f8fafc;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
+      margin: 0;
+      background-color: var(--light-bg);
     }
-    .blue-accent { color: #3b82f6; }
-    .blue-bg { background-color: #3b82f6; }
-    .blue-border { border-color: #3b82f6; }
-    .filter-btn.active {
-      background-color: #3b82f6;
+
+    /* Header (standardized) */
+    header {
+      background: var(--dark-bg);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
       color: #fff;
+      font-size: 1.4em;
+      margin: 0;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--accent-blue), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Nav links */
+    header nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    header nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent-blue);
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
+    header nav a.active {
+      color: var(--accent-blue);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Filter buttons */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--secondary-blue);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background: #e0f2fe;
+    }
+
+    .filter-btn.active {
+      background: var(--secondary-blue);
+      color: #fff;
+    }
+
+    /* Project cards */
+    details {
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    details[open] {
+      box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    a.download-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: var(--secondary-blue);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    a.download-btn:hover {
+      background: var(--primary-blue);
     }
   </style>
 </head>
-<body class="min-h-screen">
-  <div class="container mx-auto px-4 py-12 max-w-5xl">
-    
-    <!-- Header (Navigation Bar) -->
-<header>
-  <div class="header-content">
-    <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
-    <h1>Peter B. Sullivan</h1>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="education.html">Education</a>
-    <a href="projects.html">Projects</a>
-    <a href="work_experience.html">Work Experience</a>
-  </nav>
-</header>
-<style>
-      /* Navigation */
-      :root{
-    --primary-blue: #2563eb;
-    --secondary-blue: #3b82f6;
-    --accent-blue: #93c5fd;
-    --dark-bg: #1e293b;
-    --light-bg: #f8fafc;
-  }
-  
-  /* Header container */
-  header {
-    background: var(--dark-bg);
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    animation: slideDown 0.8s ease;
-  }
-  
-  /* small container holding photo + name */
-  .header-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* profile image in header */
-  .profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent-blue);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .profile-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  }
-  
-  /* header name (small in the header) */
-  header h1 {
-    color: #fff;
-    font-size: 1.6em;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 600;
-    background: linear-gradient(90deg, var(--accent-blue), #fff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: all 0.3s ease;
-  }
-  
-  header h1:hover {
-    background: linear-gradient(90deg, #fff, var(--accent-blue));
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-  
-  /* nav links */
-  header nav a {
-    color: #e2e8f0;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 8px;
-    position: relative;
-  }
-  
-  /* underline animation */
-  header nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: var(--accent-blue);
-    transition: width 0.3s ease;
-  }
-  
-  header nav a:hover {
-    color: var(--accent-blue);
-    transform: translateY(-2px);
-  }
-  
-  header nav a:hover::after {
-    width: 100%;
-  }
-  
-  /* active page styling (applies when JS adds .active) */
-  header nav a.active {
-    color: var(--accent-blue);
-    background: rgba(255,255,255,0.03);
-    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.02);
-  }
-  </style>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="http://static.photos/people/200x200/42" alt="Profile Photo" class="profile-img">
+      <h1>Peter B. Sullivan</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="work_experience.html">Work Experience</a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="text-4xl font-bold text-gray-800 mb-12">My <span style="color: var(--secondary-blue);">Projects</span></h1>
+
     <!-- Filters -->
-    <div class="flex flex-wrap gap-3 mb-10">
-      <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100 active" onclick="filterProjects('all')">All</button>
-      <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100" onclick="filterProjects('healthcare')">Healthcare</button>
-      <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100" onclick="filterProjects('insurance')">Insurance</button>
-      <button class="filter-btn px-4 py-2 rounded-full border blue-border text-gray-700 hover:bg-blue-100" onclick="filterProjects('ai')">AI/Automation</button>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+      <button class="filter-btn" onclick="filterProjects('healthcare', event)">Healthcare</button>
+      <button class="filter-btn" onclick="filterProjects('insurance', event)">Insurance</button>
+      <button class="filter-btn" onclick="filterProjects('ai', event)">AI/Automation</button>
     </div>
 
     <!-- Projects Grid -->
-    <div id="projects-grid" class="space-y-8">
+    <div id="projects-grid">
       <!-- Business Analytics Capstone -->
-      <div class="project insurance bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
-        <details open class="group">
-          <summary class="list-none cursor-pointer p-6 focus:outline-none">
-            <div class="flex justify-between items-center">
-              <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
-                Business Analytics Capstone – Future Edge Developments (Jun 2025 – Present)
-              </h2>
-              <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
-            </div>
+      <div class="project insurance">
+        <details open>
+          <summary>
+            <h2>Business Analytics Capstone – Future Edge Developments (Jun 2025 – Present)</h2>
           </summary>
           <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-            <p class="text-gray-600 mb-2"><em>University of Massachusetts Lowell, Lowell, MA</em></p>
-            <ul class="list-disc pl-5 space-y-1 text-gray-600">
+            <p><em>University of Massachusetts Lowell, Lowell, MA</em></p>
+            <ul>
               <li>Designed a team data engineering pipeline utilizing the CRISP-DM methodology.</li>
               <li>Connected five data sources with APIs to analyze, clean, and model insights in Python.</li>
               <li>Built scheduled dashboards in Looker Studio to forecast and visualize KPIs for the client.</li>
@@ -180,47 +221,33 @@
         </details>
       </div>
 
-    <!-- VR Thesis (Healthcare) -->
-    <div class="project healthcare bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-      <details class="group">
-        <summary class="list-none cursor-pointer p-6 focus:outline-none">
-          <div class="flex justify-between items-center">
-            <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
-              Honors Program Thesis – The Impact of Virtual Reality on the Healthcare Industry (Jan – May 2023)
-            </h2>
-            <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
-          </div>
-        </summary>
-        <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-          <p class="text-gray-600 mb-2"><em>Bryant University, Smithfield, RI</em></p>
-          <ul class="list-disc pl-5 space-y-1 text-gray-600">
-            <li>Authored a 35-page thesis analyzing VR's applications in medical training and patient care.</li>
-            <li>Conducted extensive research and data analysis, publishing findings with ~700 global downloads.</li>
-            <li>Supported the notion that VR has strong potential in healthcare, despite its high cost of entry.</li>
-          </ul>
-          <!-- Download button -->
-          <a href="https://digitalcommons.bryant.edu/honors_cis/9/" target="_blank" 
-             class="inline-block mt-4 px-5 py-2 rounded-lg blue-bg text-white font-medium hover:bg-blue-600 transition-colors">
-            📄 Download Thesis
-          </a>
-        </div>
-      </details>
-    </div>
-
-      <!-- Prompt Engineering Project (AI/Automation) -->
-      <div class="project ai bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-        <details class="group">
-          <summary class="list-none cursor-pointer p-6 focus:outline-none">
-            <div class="flex justify-between items-center">
-              <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-blue-500 transition-colors">
-                Freelance Prompt Engineering Project (Jul – Aug 2024)
-              </h2>
-              <i data-feather="chevron-down" class="group-open:rotate-180 transition-transform"></i>
-            </div>
+      <!-- VR Thesis (Healthcare) -->
+      <div class="project healthcare">
+        <details>
+          <summary>
+            <h2>Honors Program Thesis – The Impact of Virtual Reality on the Healthcare Industry (Jan – May 2023)</h2>
           </summary>
           <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-            <p class="text-gray-600 mb-2"><em>Online</em></p>
-            <ul class="list-disc pl-5 space-y-1 text-gray-600">
+            <p><em>Bryant University, Smithfield, RI</em></p>
+            <ul>
+              <li>Authored a 35-page thesis analyzing VR's applications in medical training and patient care.</li>
+              <li>Conducted extensive research and data analysis, publishing findings with ~700 global downloads.</li>
+              <li>Supported the notion that VR has strong potential in healthcare, despite its high cost of entry.</li>
+            </ul>
+            <a href="https://digitalcommons.bryant.edu/honors_cis/9/" target="_blank" class="download-btn">📄 Download Thesis</a>
+          </div>
+        </details>
+      </div>
+
+      <!-- Prompt Engineering Project (AI/Automation) -->
+      <div class="project ai">
+        <details>
+          <summary>
+            <h2>Freelance Prompt Engineering Project (Jul – Aug 2024)</h2>
+          </summary>
+          <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+            <p><em>Online</em></p>
+            <ul>
               <li>Developed an AI-driven nutrition planning tool, generating 1,000+ pages with customized caloric recipes and images.</li>
               <li>Proofread and refined outputs to deliver accurate, high-value results for client meal-planning goals.</li>
             </ul>
@@ -230,12 +257,19 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-    feather.replace();
+    // Highlight active nav link
+    const links = document.querySelectorAll('header nav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
 
-    // Filtering function
-    function filterProjects(category) {
+    // Project filtering
+    function filterProjects(category, event) {
       const projects = document.querySelectorAll('.project');
       const buttons = document.querySelectorAll('.filter-btn');
 
