@@ -290,100 +290,92 @@
 </section>
  <!-- Word Cloud Section -->
 <section class="word-cloud">
-  <span class="word medium float1">Business Analyst</span>
-  <span class="word large tilt-left float2">Data Analytics</span>
-  <span class="word small float3">SQL</span>
-  <span class="word large tilt-right float2">Python</span>
+  <span class="word large float1">Data Analytics</span>
+  <span class="word medium float3 tilt-left">Business Analyst</span>
+  <span class="word small float2">SQL</span>
+  <span class="word large float4 tilt-right">Python</span>
   <span class="word medium float1">Power BI</span>
-  <span class="word small tilt-left float3">Process Improvement</span>
+  <span class="word small float3">Process Improvement</span>
+  <span class="word small float2 tilt-left">Machine Learning</span>
+  <span class="word medium float4">Simulation Modeling</span>
 </section>
 
 <style>
-  .word-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px 30px; /* looser spacing */
-    padding: 15px 15px; /* more breathing room */
-    background: linear-gradient(135deg);
-    min-height: 300px;
-    overflow: hidden;
-  }
-
-  .word {
-    font-weight: 600;
-    color: var(--dark-bg);
-    opacity: 0.85;
-    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
-    cursor: default;
-    display: inline-block;
-  }
-
-  .word.large { font-size: 2.5rem; }
-  .word.medium { font-size: 1.8rem; }
-  .word.small { font-size: 1.3rem; }
-
-  .word:hover {
-    transform: scale(1.2);
-    opacity: 1;
-    color: var(--primary-blue);
-  }
-
-  /* Add tilt for less alignment */
-  .tilt-left { transform: rotate(-6deg); }
-  .tilt-right { transform: rotate(6deg); }
-
-  /* Floating animations */
-  @keyframes floatUpDown1 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-
-  @keyframes floatUpDown2 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-  }
-
-  @keyframes floatUpDown3 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .float1 { animation: floatUpDown1 6s ease-in-out infinite; }
-  .float2 { animation: floatUpDown2 8s ease-in-out infinite; }
-  .float3 { animation: floatUpDown3 7s ease-in-out infinite; }
-
-  /* Keep tilt even when floating */
-  .tilt-left.float1, .tilt-left.float2, .tilt-left.float3 {
-    animation-name: floatUpDown1, tiltLeft;
-  }
-  /* Responsive adjustments */
-@media (max-width: 768px) { /* tablets + smaller */
-  .word-cloud {
-    gap: 30px 40px;   /* reduce spacing */
-    padding: 60px 15px;
-    min-height: 250px;
-  }
-
-  .word.large { font-size: 1.8rem; }
-  .word.medium { font-size: 1.4rem; }
-  .word.small { font-size: 1rem; }
+  /* Word Cloud CSS */
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 80px 15px;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--light-bg), var(--accent-blue));
 }
 
-@media (max-width: 480px) { /* phones */
-  .word-cloud {
-    flex-direction: column; /* stack vertically */
-    gap: 20px;
-    min-height: auto;
-    padding: 40px 10px;
-  }
+.word {
+  font-weight: 600;
+  color: var(--dark-bg);
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap; /* Prevents words from wrapping */
+}
 
-  .word {
-    text-align: center;
-    display: block;
-  }
+.word.large { font-size: 3rem; }
+.word.medium { font-size: 2.2rem; }
+.word.small { font-size: 1.5rem; }
 
+.word:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  color: var(--primary-blue);
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Add tilt for less alignment */
+.tilt-left { transform: rotate(-5deg); }
+.tilt-right { transform: rotate(5deg); }
+
+/* Floating animations with varied speeds and directions */
+@keyframes floatUpDown1 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes floatUpDown2 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(12px) rotate(-3deg); }
+}
+
+@keyframes floatUpDown3 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes floatUpDown4 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(8px) rotate(-2deg); }
+}
+
+.float1 { animation: floatUpDown1 7s ease-in-out infinite; }
+.float2 { animation: floatUpDown2 9s ease-in-out infinite; }
+.float3 { animation: floatUpDown3 6s ease-in-out infinite; }
+.float4 { animation: floatUpDown4 8s ease-in-out infinite; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .word.large { font-size: 2rem; }
+  .word.medium { font-size: 1.6rem; }
+  .word.small { font-size: 1.2rem; }
+  .word-cloud { padding: 50px 15px; }
+}
+
+@media (max-width: 480px) {
+  .word-cloud { gap: 20px; padding: 40px 10px; }
   .word.large { font-size: 1.5rem; }
   .word.medium { font-size: 1.2rem; }
   .word.small { font-size: 0.95rem; }
