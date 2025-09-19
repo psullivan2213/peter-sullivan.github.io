@@ -305,8 +305,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  padding: 80px 15px;
+  gap: 20px;
+  padding: 50px 15px;
   min-height: 400px;
   position: relative;
   overflow: hidden;
@@ -323,8 +323,8 @@
   white-space: nowrap; /* Prevents words from wrapping */
 }
 
-.word.large { font-size: 3rem; }
-.word.medium { font-size: 2.2rem; }
+.word.large { font-size: 2.5rem; }
+.word.medium { font-size: 2rem; }
 .word.small { font-size: 1.5rem; }
 
 /* Add tilt for less alignment */
@@ -358,16 +358,12 @@
 .float4 { animation: floatUpDown4 8s ease-in-out infinite; }
 
 /* Responsive adjustments for smaller screens */
-/* Base font sizes for larger screens */
-.word.large { font-size: 3rem; }
-.word.medium { font-size: 2.2rem; }
-.word.small { font-size: 1.5rem; }
 
 /* Adjust font sizes for screens up to 768px wide (laptops/tablets) */
 @media (max-width: 768px) {
-  .word.large { font-size: 2rem; }
-  .word.medium { font-size: 1.6rem; }
-  .word.small { font-size: 1.2rem; }
+  .word.large { font-size: 1.5rem; }
+  .word.medium { font-size: 1rem; }
+  .word.small { font-size: 0.7rem; }
 }
 
 /* Adjust font sizes for screens up to 480px wide (mobile phones) */
@@ -380,9 +376,9 @@
   .word {
     text-align: center; /* Center the text within each word */
   }
-  .word.large { font-size: 1.5rem; }
-  .word.medium { font-size: 1.2rem; }
-  .word.small { font-size: 0.95rem; }
+  .word.large { font-size: 1rem; }
+  .word.medium { font-size: 0.7rem; }
+  .word.small { font-size: 0.4rem; }
 }
 </style>
   <!-- Main Content -->
