@@ -43,21 +43,27 @@
       gap: 20px;
     }
 
-    .profile-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent-blue);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+    .contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-blue);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  text-decoration: none;
+  background-color: #f8fafc;
+  cursor: pointer;
+}
 
-    .profile-img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    }
-
+.contact-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  background-color: var(--accent-blue);
+}
     header h1 {
       color: #fff;
       font-size: 1.6em;
@@ -275,7 +281,7 @@
   <!-- Header -->
   <header>
     <div class="header-content">
-      <img src=PS-headshot.JPG" alt="Profile Photo" class="profile-img">
+      <a href="#contact" class="contact-icon">📧</a>
       <h1>Peter B. Sullivan</h1>
     </div>
     <nav>
@@ -508,7 +514,7 @@
       }
     </style>
   <!-- Footer -->
-  <footer>
+  <footer id="contact">
     <p>
       Contact: <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
       <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
