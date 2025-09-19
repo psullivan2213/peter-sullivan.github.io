@@ -301,7 +301,7 @@
 </section>
 
 <style>
-  /* Word Cloud CSS */
+ /* Word Cloud CSS */
 .word-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -328,13 +328,6 @@
 .word.large { font-size: 3rem; }
 .word.medium { font-size: 2.2rem; }
 .word.small { font-size: 1.5rem; }
-
-.word:hover {
-  transform: scale(1.15);
-  opacity: 1;
-  color: var(--primary-blue);
-  text-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
-}
 
 /* Add tilt for less alignment */
 .tilt-left { transform: rotate(-5deg); }
@@ -366,19 +359,42 @@
 .float3 { animation: floatUpDown3 6s ease-in-out infinite; }
 .float4 { animation: floatUpDown4 8s ease-in-out infinite; }
 
-/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .word.large { font-size: 2rem; }
-  .word.medium { font-size: 1.6rem; }
-  .word.small { font-size: 1.2rem; }
-  .word-cloud { padding: 50px 15px; }
+  .word-cloud {
+    padding: 50px 15px;
+  }
+  .word.large {
+    font-size: 2rem;
+  }
+  .word.medium {
+    font-size: 1.6rem;
+  }
+  .word.small {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .word-cloud { gap: 20px; padding: 40px 10px; }
-  .word.large { font-size: 1.5rem; }
-  .word.medium { font-size: 1.2rem; }
-  .word.small { font-size: 0.95rem; }
+  .word-cloud {
+    flex-direction: column; /* Stack words vertically */
+    gap: 20px;
+    padding: 40px 10px;
+    min-height: auto;
+  }
+  .word {
+    text-align: center;
+    display: block; /* Ensures each word takes full width */
+  }
+  .word.large {
+    font-size: 1.5rem;
+  }
+  .word.medium {
+    font-size: 1.2rem;
+  }
+  .word.small {
+    font-size: 0.95rem;
+  }
 }
 </style>
   <!-- Main Content -->
