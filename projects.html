@@ -180,6 +180,26 @@
     a.download-btn:hover {
       background: var(--primary-blue);
     }
+      .project-content {
+      padding: 0 20px 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .project-content p {
+      margin: 8px 0;
+      font-style: italic;
+      color: #475569;
+    }
+
+    .project-content ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+      list-style: disc;
+      color: #334155;
+    }
+
+    .project-content li {
+      margin-bottom: 6px;
   </style>
 </head>
 <body>
@@ -212,19 +232,15 @@
     <div id="projects-grid">
       <!-- Business Analytics Capstone -->
       <div class="project insurance">
-        <details open>
-          <summary>
-            <h2>Business Analytics Capstone – Future Edge Developments (Jun 2025 – Present)</h2>
-          </summary>
-          <div class="px-6 pb-6 pt-2 border-t border-gray-100">
-            <p><em>University of Massachusetts Lowell, Lowell, MA</em></p>
-            <ul>
-              <li>Designed a team data engineering pipeline utilizing the CRISP-DM methodology.</li>
-              <li>Connected five data sources with APIs to analyze, clean, and model insights in Python.</li>
-              <li>Built scheduled dashboards in Looker Studio to forecast and visualize KPIs for the client.</li>
-            </ul>
-          </div>
-        </details>
+         <details open>
+      <summary><h2>Business Analytics Capstone – Future Edge Developments (Jun 2025 – Present)</h2></summary>
+      <div class="project-content">
+        <p><em>University of Massachusetts Lowell, Lowell, MA</em></p>
+        <ul>
+          <li>Designed a team data engineering pipeline utilizing the CRISP-DM methodology.</li>
+          <li>Connected five data sources with APIs to analyze, clean, and model insights in Python.</li>
+          <li>Built scheduled dashboards in Looker Studio to forecast and visualize KPIs for the client.</li>
+        </ul>
       </div>
 
       <!-- VR Thesis (Healthcare) -->
@@ -233,7 +249,7 @@
           <summary>
             <h2>Honors Program Thesis – The Impact of Virtual Reality on the Healthcare Industry (Jan – May 2023)</h2>
           </summary>
-          <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+          <div class="project-content">
             <p><em>Bryant University, Smithfield, RI</em></p>
             <ul>
               <li>Authored a 35-page thesis analyzing VR's applications in medical training and patient care.</li>
