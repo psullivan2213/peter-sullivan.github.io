@@ -293,11 +293,13 @@
   <span class="word large float1">Data Analysis</span>
   <span class="word medium float2">SQL</span>
   <span class="word large float4 tilt-right">Python</span>
-  <span class="word medium float1">Power BI</span>
   <span class="word large float3 tilt-left">Systems Analysis</span>
-  <span class="word medium float2 tilt-left">Machine Learning</span>
 </section>
 
+  <div class="word-cloud-link">
+  <a href="#skills">Jump to Skills Section →</a>
+  </div>
+  
 <style>
  /* Word Cloud CSS */
 .word-cloud {
@@ -380,6 +382,25 @@
   .word.medium { font-size: 0.7rem; }
   .word.small { font-size: 0.4rem; }
 }
+/* Word-Cloud Link Styling */  
+  .word-cloud-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.word-cloud-link a {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.word-cloud-link a:hover {
+  color: var(--secondary-blue);
+  border-bottom-color: var(--secondary-blue);
+}
 </style>
   <!-- Main Content -->
   <main>
@@ -411,7 +432,7 @@
     </section>
 
     <section class="card">
-      <h2>Technical Skills</h2>
+      <h2 id="skills">Technical Skills</h2>
       <h3>Programming & Data</h3>
       <ul>
         <li>Python</li>
