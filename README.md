@@ -1,3 +1,3 @@
 # peter-sullivan.github.io
-Peter's First Website
+Peter Sullivan Professional Website
 -Showcase of my qualities to businesses.
