@@ -1,480 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Peter B. Sullivan – Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Peter B. Sullivan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Styling */
-    :root {
-      --primary-blue: #2563eb;
-      --secondary-blue: #3b82f6;
-      --accent-blue: #93c5fd;
-      --dark-bg: #1e293b;
-      --light-bg: #f8fafc;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: var(--light-bg);
-      color: #334155;
-      line-height: 1.6;
-      overflow-x: hidden;
+      padding: 0;
+      background: #f9fafb;
+      color: #1f2937;
     }
-
-    /* Header */
     header {
-      background: var(--dark-bg);
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-      animation: slideDown 0.8s ease;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .contact-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid var(--accent-blue);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  text-decoration: none;
-  background-color: #f8fafc;
-  cursor: pointer;
-}
-
-.contact-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  background-color: var(--accent-blue);
-}
-    header h1 {
-      color: #fff;
-      font-size: 1.6em;
-      margin: 0;
-      letter-spacing: 1px;
-      font-weight: 600;
-      background: linear-gradient(90deg, var(--accent-blue), #fff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      transition: all 0.3s ease;
-    }
-
-    header h1:hover {
-      background: linear-gradient(90deg, #fff, var(--accent-blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    /* Navigation */
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 8px;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background: var(--accent-blue);
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-blue);
-      transform: translateY(-2px);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Main Layout */
-    main {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
-      animation: fadeIn 1s ease;
-    }
-
-    h2 {
-      margin-top: 50px;
-      color: var(--dark-bg);
-      padding-bottom: 5px;
-      letter-spacing: 1px;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 4px;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: expand 0.5s ease forwards;
-    }
-  
-    /* Hero Section */
-    .hero {
       text-align: center;
-      padding: 30px 20px 30px;
-      background: var(--dark-bg);
+      padding: 2rem 1rem;
+      background: #1e3a8a;
+      color: white;
     }
-    
-    .hero-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--accent-blue);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
-    
-    .hero-img:hover {
-      transform: scale(1.05);
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    
-    .hero-name {
-      margin-top: 20px;
-      font-size: 2.8em;
-      font-weight: 700;
-      color: var(--light-bg);
-      background: linear-gradient(90deg, var(--light-bg), var(--secondary-blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    h2 {
+      color: #1e3a8a;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
     }
-
-    @keyframes expand {
-      to { transform: scaleX(1); }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    p {
-      font-size: 1.05em;
+    .project-card h3 {
+      margin-top: 0;
     }
-
-    ul {
-      margin: 10px 0 20px 20px;
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #1e3a8a;
+      font-weight: 600;
+      text-decoration: none;
     }
-
-    /* Card Style */
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      padding: 20px;
-      margin-top: 20px;
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      animation: popUp 0.6s ease;
-      border: 1px solid rgba(59, 130, 246, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), transparent);
-      z-index: -1;
-    }
-
-    .card:hover {
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-      border-color: rgba(59, 130, 246, 0.2);
-    }
-
-    /* Footer */
     footer {
       text-align: center;
-      padding: 25px;
-      background: #1a237e;
-      color: #e8eaf6;
-      margin-top: 80px;
-      font-size: 0.9em;
-      animation: fadeIn 1.2s ease;
+      padding: 2rem 1rem;
+      background: #f3f4f6;
+      font-size: 0.9rem;
+      color: #4b5563;
     }
-
-    footer a {
-      color: #64b5f6;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    footer a:hover {
-      color: #bbdefb;
-      text-decoration: underline;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes slideDown {
-      from {transform: translateY(-100%); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
-    }
-
-    @keyframes popUp {
-      from {transform: scale(0.95) translateY(20px); opacity: 0;}
-      to {transform: scale(1) translateY(0); opacity: 1;}
-    }
-
-    @keyframes float {
-      0% {transform: translateY(0);}
-      50% {transform: translateY(-10px);}
-      100% {transform: translateY(0);}
-    }
-
-    .card:hover h2::after {
-      animation: float 3s ease-in-out infinite;
-    }
-    #skills {
-  scroll-margin-top: 100px; /* Adjust this value as needed */
-}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="header-content">
-      <a href="#contact" class="contact-icon">📧</a>
-      <h1>Peter B. Sullivan</h1>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
-      <a href="work_experience.html">Work Experience</a>
-    </nav>
+    <h1>Peter B. Sullivan | Portfolio</h1>
+    <p>A collection of selected work samples and projects</p>
   </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <img src="PS-headshot.JPG" alt="Profile Photo" class="hero-img">
-  <h1 class="hero-name">Peter B. Sullivan</h1>
-</section>
- <!-- Word Cloud Section -->
-<section class="word-cloud">
-  <span class="word large float1">Data Analysis</span>
-  <span class="word medium float2">SQL</span>
-  <span class="word large float4 tilt-right">Python</span>
-  <span class="word large float3 tilt-left">Systems Analysis</span>
-</section>
-
-  <div class="word-cloud-link">
-  <a href="#skills">Jump to Skills Section →</a>
-  </div>
-  
-<style>
- /* Word Cloud CSS */
-.word-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px 40px;
-  padding: 25px 15px;
-  min-height: 200px;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--light-bg), var(--accent-blue));
-}
-
-.word {
-  font-weight: 600;
-  color: var(--dark-bg);
-  opacity: 0.85;
-  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-  display: inline-block;
-  white-space: nowrap; /* Prevents words from wrapping */
-}
-
-.word.large { font-size: 2.5rem; }
-.word.medium { font-size: 2rem; }
-.word.small { font-size: 1.5rem; }
-
-/* Add tilt for less alignment */
-.tilt-left { transform: rotate(-5deg); }
-.tilt-right { transform: rotate(5deg); }
-
-/* Floating animations with varied speeds and directions */
-@keyframes floatUpDown1 {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-15px) rotate(2deg); }
-}
-
-@keyframes floatUpDown2 {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(12px) rotate(-3deg); }
-}
-
-@keyframes floatUpDown3 {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-10px) rotate(1deg); }
-}
-
-@keyframes floatUpDown4 {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(8px) rotate(-2deg); }
-}
-
-.float1 { animation: floatUpDown1 7s ease-in-out infinite; }
-.float2 { animation: floatUpDown2 9s ease-in-out infinite; }
-.float3 { animation: floatUpDown3 6s ease-in-out infinite; }
-.float4 { animation: floatUpDown4 8s ease-in-out infinite; }
-
-/* Responsive adjustments for smaller screens */
-
-/* Adjust font sizes for screens up to 768px wide (laptops/tablets) */
-@media (max-width: 768px) {
-  .word.large { font-size: 1.5rem; }
-  .word.medium { font-size: 1rem; }
-  .word.small { font-size: 0.7rem; }
-}
-
-/* Adjust font sizes for screens up to 480px wide (mobile phones) */
-@media (max-width: 480px) {
-  .word-cloud {
-    flex-direction: column; /* Stack words vertically */
-    align-items: center; /* Center them on the screen */
-    gap: 15px; /* Adjust spacing */
-  }
-  .word {
-    text-align: center; /* Center the text within each word */
-  }
-  .word.large { font-size: 1rem; }
-  .word.medium { font-size: 0.7rem; }
-  .word.small { font-size: 0.4rem; }
-}
-/* Word-Cloud Link Styling */  
-  .word-cloud-link {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.word-cloud-link a {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: var(--dark-bg);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.word-cloud-link a:hover {
-  color: var(--secondary-blue);
-  border-bottom-color: var(--secondary-blue);
-}
-</style>
-  <!-- Main Content -->
   <main>
-    <section class="card">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2>About Me</h2>
-        <a href="mailto:psullivan2213@outlook.com?subject=Request%20for%20Resume&body=Hi%20Peter%2C%20I%27d%20like%20to%20request%20a%20copy%20of%20your%20most%20recent%20resume." 
-           class="resume-btn" style="text-decoration: none;">
-          <button style="background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); 
-                        color: white; 
-                        border: none; 
-                        padding: 10px 20px; 
-                        border-radius: 8px; 
-                        font-weight: 600;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            📩 Request Resume
-          </button>
-        </a>
+    <section>
+      <h2>Featured Work</h2>
+
+      <div class="project-card">
+        <h3>Honors Thesis – Virtual Reality in Healthcare Training</h3>
+        <p>
+          Authored a 35-page thesis on the role of virtual reality in healthcare training and patient care.
+          Downloaded nearly 700 times worldwide, demonstrating broad interest and impact.
+        </p>
+        <a href="LINK_TO_YOUR_THESIS.pdf" target="_blank">📄 Download Thesis</a>
       </div>
-      <p>
-        Adaptive IT Business Analyst with 2+ years of agile experience in SQL-driven systems analysis and modern BI tools. 
-        Currently pursuing an M.S. in Business Analytics with a focus on data analysis, machine learning, and automation. 
-        Passionate about streamlining processes, delivering actionable insights, and leveraging analytics to support 
-        operations and decision-making. Experienced in blending technical expertise with business needs to create 
-        solutions that drive efficiency and impact.
-      </p>
-    </section>
 
-    <section id="skills" class="card">
-      <h2>Technical Skills</h2>
-      <h3>Programming & Data</h3>
-      <ul>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>Basic Shell</li>
-      </ul>
+      <div class="project-card">
+        <h3>Analytics Dashboards (Coming Soon)</h3>
+        <p>
+          Interactive dashboards built using Power BI and Looker Studio for financial and operational reporting.
+        </p>
+      </div>
 
-      <h3>Visualization & Analytics</h3>
-      <ul>
-        <li>Power BI</li>
-        <li>Looker Studio</li>
-        <li>Machine Learning</li>
-        <li>Simulation Modeling</li>
-        <li>Business Analytics & Statistics</li>
-      </ul>
-
-      <h3>Tools & Platforms</h3>
-      <ul>
-        <li>Microsoft Suite (Excel, Access, Visio, SharePoint)</li>
-        <li>Jira, Confluence</li>
-        <li>Smartsheet</li>
-        <li>Google Sheets</li>
-      </ul>
+      <div class="project-card">
+        <h3>Case Studies & Reports (Coming Soon)</h3>
+        <p>
+          Summaries of regulatory compliance projects and process optimization initiatives.
+        </p>
+      </div>
     </section>
   </main>
-    
-  <!-- Footer -->
-  <footer id="contact">
-    <p>
-      📧Contact: <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
-      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
-      774-284-3589
-    </p>
+
+  <footer>
+    © 2025 Peter B. Sullivan | <a href="mailto:your.email@example.com">Contact Me</a>
   </footer>
 </body>
 </html>
