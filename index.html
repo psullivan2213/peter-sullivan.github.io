@@ -1,103 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Peter B. Sullivan</title>
+  <meta charset="UTF-8">
+  <title>Peter B. Sullivan – Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-blue: #93c5fd;
+      --dark-bg: #1e293b;
+      --light-bg: #f8fafc;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9fafb;
-      color: #1f2937;
+      background: var(--light-bg);
+      color: #334155;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
+    /* Header */
     header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #1e3a8a;
-      color: white;
+      background: var(--dark-bg);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      animation: slideDown 0.8s ease;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
     header h1 {
+      color: #fff;
+      font-size: 1.6em;
       margin: 0;
-      font-size: 2rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--accent-blue), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: all 0.3s ease;
     }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    header h1:hover {
+      background: linear-gradient(90deg, #fff, var(--accent-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    /* Navigation */
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 30px 20px 30px;
+      background: var(--dark-bg);
+    }
+    .hero-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--accent-blue);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .hero-img:hover { transform: scale(1.05); }
+    .hero-name {
+      margin-top: 20px;
+      font-size: 2.8em;
+      font-weight: 700;
+      color: var(--light-bg);
+      background: linear-gradient(90deg, var(--light-bg), var(--secondary-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Word Cloud */
+    .word-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px 40px;
+      padding: 25px 15px;
+      min-height: 200px;
+      background: linear-gradient(135deg, var(--light-bg), var(--accent-blue));
+    }
+    .word {
+      font-weight: 600;
+      color: var(--dark-bg);
+      opacity: 0.85;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .word.large { font-size: 2.5rem; }
+    .word.medium { font-size: 2rem; }
+    .word.small { font-size: 1.5rem; }
+    /* Animations */
+    @keyframes floatUpDown {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .float1 { animation: floatUpDown 6s ease-in-out infinite; }
+    .float2 { animation: floatUpDown 8s ease-in-out infinite; }
+    .float3 { animation: floatUpDown 7s ease-in-out infinite; }
+    .float4 { animation: floatUpDown 9s ease-in-out infinite; }
+    /* Cards */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      border-color: rgba(59, 130, 246, 0.2);
     }
     h2 {
-      color: #1e3a8a;
+      color: var(--dark-bg);
       font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.5rem;
-    }
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .project-card h3 {
-      margin-top: 0;
-    }
-    .project-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #1e3a8a;
-      font-weight: 600;
-      text-decoration: none;
+      border-bottom: 2px solid var(--accent-blue);
+      padding-bottom: 5px;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      background: #f3f4f6;
-      font-size: 0.9rem;
-      color: #4b5563;
+      padding: 25px;
+      background: #1a237e;
+      color: #e8eaf6;
+      margin-top: 80px;
+      font-size: 0.9em;
     }
+    footer a {
+      color: #64b5f6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Peter B. Sullivan | Portfolio</h1>
-    <p>A collection of selected work samples and projects</p>
+    <div class="header-content">
+      <h1>Portfolio</h1>
+    </div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Featured Work</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <img src="PS-headshot.JPG" alt="Profile Photo" class="hero-img">
+    <h1 class="hero-name">Peter B. Sullivan</h1>
+  </section>
 
-      <div class="project-card">
-        <h3>Honors Thesis – Virtual Reality in Healthcare Training</h3>
-        <p>
-          Authored a 35-page thesis on the role of virtual reality in healthcare training and patient care.
-          Downloaded nearly 700 times worldwide, demonstrating broad interest and impact.
-        </p>
-        <a href="LINK_TO_YOUR_THESIS.pdf" target="_blank">📄 Download Thesis</a>
-      </div>
+  <!-- Word Cloud -->
+  <section class="word-cloud">
+    <span class="word large float1">Data Analysis</span>
+    <span class="word medium float2">SQL</span>
+    <span class="word large float3">Python</span>
+    <span class="word medium float4">Systems Analysis</span>
+    <span class="word small">Business Intelligence</span>
+    <span class="word small">Compliance</span>
+  </section>
 
-      <div class="project-card">
-        <h3>Analytics Dashboards (Coming Soon)</h3>
-        <p>
-          Interactive dashboards built using Power BI and Looker Studio for financial and operational reporting.
-        </p>
-      </div>
+  <!-- Main -->
+  <main id="work" style="max-width: 900px; margin: 2rem auto; padding: 0 20px;">
+    <section class="card">
+      <h2>Honors Thesis – Virtual Reality in Healthcare Training</h2>
+      <p>
+        Authored a 35-page thesis on the role of virtual reality in healthcare training and patient care.
+        Downloaded nearly 700 times worldwide, demonstrating broad interest and impact.
+      </p>
+      <a href="LINK_TO_YOUR_THESIS.pdf" target="_blank">📄 Download Thesis</a>
+    </section>
 
-      <div class="project-card">
-        <h3>Case Studies & Reports (Coming Soon)</h3>
-        <p>
-          Summaries of regulatory compliance projects and process optimization initiatives.
-        </p>
-      </div>
+    <section class="card">
+      <h2>Analytics Dashboards (Coming Soon)</h2>
+      <p>
+        Interactive dashboards built using Power BI and Looker Studio for financial and operational reporting.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Case Studies & Reports (Coming Soon)</h2>
+      <p>
+        Summaries of regulatory compliance projects and process optimization initiatives.
+      </p>
     </section>
   </main>
 
-  <footer>
-    © 2025 Peter B. Sullivan | <a href="mailto:your.email@example.com">Contact Me</a>
+  <!-- Footer -->
+  <footer id="contact">
+    <p>
+      📧 <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
+      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 </body>
 </html>
