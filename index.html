@@ -5,9 +5,6 @@
   <title>Peter B. Sullivan – Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-     :target {
-  scroll-margin-top: 80px;
-     }
     :root {
       --primary-blue: #2563eb;
       --secondary-blue: #3b82f6;
@@ -23,6 +20,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     /* Header */
     header {
       background: var(--dark-bg);
@@ -58,6 +56,7 @@
       -webkit-background-clip: text;
       background-clip: text;
     }
+
     /* Navigation */
     nav a {
       color: #e2e8f0;
@@ -73,11 +72,17 @@
       color: var(--accent-blue);
       transform: translateY(-2px);
     }
+
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 30px 20px 30px;
-      background: var(--dark-bg);
+      padding: 50px 20px 40px;
+      background: linear-gradient(270deg, #1e293b, #3b82f6, #2563eb);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards, gradientShift 15s ease infinite;
     }
     .hero-img {
       width: 200px;
@@ -99,6 +104,7 @@
       background-clip: text;
       color: transparent;
     }
+
     /* Word Cloud */
     .word-cloud {
       display: flex;
@@ -109,6 +115,10 @@
       padding: 25px 15px;
       min-height: 200px;
       background: linear-gradient(135deg, var(--light-bg), var(--accent-blue));
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
     }
     .word {
       font-weight: 600;
@@ -121,7 +131,8 @@
     .word.large { font-size: 2.5rem; }
     .word.medium { font-size: 2rem; }
     .word.small { font-size: 1.5rem; }
-    /* Animations */
+
+    /* Floating Animations */
     @keyframes floatUpDown {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
@@ -130,7 +141,8 @@
     .float2 { animation: floatUpDown 8s ease-in-out infinite; }
     .float3 { animation: floatUpDown 7s ease-in-out infinite; }
     .float4 { animation: floatUpDown 9s ease-in-out infinite; }
-    /* Cards */
+
+    /* Work Section Cards */
     .card {
       background: #fff;
       border-radius: 16px;
@@ -145,19 +157,22 @@
       box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
       border-color: rgba(59, 130, 246, 0.2);
     }
+
     h2 {
       color: var(--dark-bg);
       font-size: 1.5rem;
       border-bottom: 2px solid var(--accent-blue);
       padding-bottom: 5px;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 25px;
       background: #1a237e;
       color: #e8eaf6;
       margin-top: 80px;
-      font-size: 1.2em;
+      font-size: 0.9em;
     }
     footer a {
       color: #64b5f6;
@@ -165,8 +180,28 @@
       font-weight: 600;
     }
     footer a:hover { text-decoration: underline; }
+
+    /* Anchor offset fix for sticky header */
+    :target {
+      scroll-margin-top: 80px;
+    }
+
+    /* Keyframes */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -196,52 +231,38 @@
   <!-- Main -->
   <main id="work" style="max-width: 900px; margin: 2rem auto; padding: 0 20px;">
     <section class="card">
-      <h2>Academic Capstone - Business Analytics Capstone: Future Edge Developments Dashboards 
-        (In Flight)
-      </h2>
-      <p>
-        Building a data pipeline to present dashboards on KPIs for Future Edge Developments' client meetings.
-      </p>
+      <h2>Academic Capstone - Business Analytics Capstone: Future Edge Developments Dashboards (In Flight)</h2>
+      <p>Building a data pipeline to present dashboards on KPIs for Future Edge Developments' client meetings.</p>
     </section>
-    
+
     <section class="card">
       <h2>Academic Honors Thesis: Virtual Reality in the Healthcare Industry</h2>
-      <p>
-        Authored a 35-page thesis analyzing the role of virtual reality in healthcare training and patient care.
-      </p>
+      <p>Authored a 35-page thesis analyzing the role of virtual reality in healthcare training and patient care.</p>
       <a href="https://digitalcommons.bryant.edu/honors_cis/9/" target="_blank" class="download-btn">📄 Download Thesis</a>
     </section>
 
-     <section class="card">
+    <section class="card">
       <h2>Academic Case Study - Sinofert Holdings Limited - Urea Distribution Planning</h2>
-      <p>
-        Harvard Business Case Study on linear optimization approach for Sinofert Holdings using Excel Solver.  
-      </p>
+      <p>Harvard Business Case Study on linear optimization approach for Sinofert Holdings using Excel Solver.</p>
       <a href="Team G Presentation- Sinofert.xlsx" target="_blank" class="download-btn">📄 Download Excel Data</a>
-       <a href="Case_Presentation_Sinofert_Final.pptx" target="_blank" class="download-btn">📄 Download Presentation</a>
+      <a href="Case_Presentation_Sinofert_Final.pptx" target="_blank" class="download-btn">📄 Download Presentation</a>
     </section>
-    
+
     <section class="card">
       <h2>Personal Project - Aggregate Credit Card Transactions</h2>
-      <p>
-        Python program for aggregating transactions from multiple credit cards and standardizing them for comprehensive financial spending analysis.
-      </p>
+      <p>Python program for aggregating transactions from multiple credit cards and standardizing them for comprehensive financial spending analysis.</p>
       <a href="https://github.com/psullivan2213/aggregate-CC-transactions" target="_blank" class="download-btn">💳 View on GitHub</a>
     </section>
 
     <section class="card">
       <h2>Certification - Six Sigma Yellow Belt</h2>
-      <p>
-        Issued by Six Sigma Online and the Council for Six Sigma.
-      </p>
+      <p>Issued by Six Sigma Online and the Council for Six Sigma.</p>
       <a href="lean-six-sigma-yellow-belt-certificate.pdf" target="_blank" class="download-btn">📜 View Certificate</a>
     </section>
 
-        <section class="card">
+    <section class="card">
       <h2>Certification - AIT 24 - General Insurance for IT and Support Professionals</h2>
-      <p>
-        Issued by The Institutes for insurance professionals with computer systems knowledge.
-      </p>
+      <p>Issued by The Institutes for insurance professionals with computer systems knowledge.</p>
       <a href="AIT-24 Certificate.pdf" target="_blank" class="download-btn">📜 View Certificate</a>
     </section>
   </main>
@@ -249,8 +270,8 @@
   <!-- Footer -->
   <footer id="contact">
     <p>
-      📧 <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> | 
-      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> | 
+      📧 <a href="mailto:psullivan2213@outlook.com">psullivan2213@outlook.com</a> |
+      <a href="https://linkedin.com/in/peter-b-sullivan-2213-profile/" target="_blank">LinkedIn</a> |
       <a href="https://cal.com/psullivan2213" target="_blank">💼 Book a Meeting</a>
     </p>
   </footer>
